@@ -1,0 +1,112 @@
+body {
+    font-family: Arial, sans-serif;
+    padding: 20px;
+    width: 300px;
+    text-align: center;
+    background-color: #f9f9f9;
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.header img {
+    width: 28px;
+    height: 28px;
+}
+
+.header h1 {
+    font-size: 20px;
+    margin: 0;
+}
+
+.information h2 {
+    font-size: 18px;
+    margin: 5px 0;
+}
+
+.information h3 {
+    font-size: 15px;
+    font-weight: normal;
+    color: #666;
+    margin: 0 0 15px 0;
+}
+
+.section {
+    margin-bottom: 15px;
+}
+
+.section h4 {
+    font-size: 16px;
+    margin-bottom: 8px;
+    text-decoration: underline;
+}
+
+.list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.list li {
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.list img {
+    width: 60px;
+    height: 60px;
+    border-radius: 4px;
+    object-fit: cover;
+}
+
+.list span {
+    text-align: left;
+}
+
+.list a{
+    color: black;
+    text-decoration: none;
+    font-size: 18px;
+}
+.list a:hover{
+    text-decoration: underline;
+}
+.continue {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.continue a {
+    font-size: 14px;
+    color: #007bff;
+    text-decoration: none;
+}
+
+.continue a:hover {
+    text-decoration: underline;
+}
+
+button {
+    padding: 6px 12px;
+    font-size: 14px;
+    cursor: pointer;
+    border: none;
+    background-color: gray;
+    color: white;
+    border-radius: 5px;
+    transition: background-color 0.2s;
+}
+
+button:hover {
+    background-color: lightgray;
+}
