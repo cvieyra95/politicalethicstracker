@@ -13,5 +13,11 @@
         "js": ["scan.js"],
         "css": ["scan.css"]
       }
+    ],
+    "web_accessible_resources": [
+      {
+        "resources": ["hub.html"],
+        "matches": ["<all_urls>"]
+      }
     ]
   }
