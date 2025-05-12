@@ -1,0 +1,126 @@
+body{
+    background-color: white;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.header{
+    display: flex;
+    align-items: center;
+    padding: 10px 20px;
+}
+.logo{
+    width: 125px
+}
+nav{
+    display: flex;
+    justify-content: left;
+    background-color: #848BA4;
+    padding: 15px 10;
+}
+
+nav a {
+    color: #000;
+    margin: 0 15px;
+    font-weight: bold;
+}
+
+nav a:hover {
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+.main{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2px;
+    justify-content: space-between;
+}
+
+.mainarticle{
+    display:flex;
+    flex-wrap: wrap;
+    gap:50px;
+    padding: 20px;
+    background-color: #fff;
+    border-bottom: 5px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px #ddd;
+    max-width: 1080px;
+}
+.mainarticle img{
+    max-width: 40%;
+    flex: 1 1 50%;
+    border-radius: 6px;
+}
+.articledesc{
+    flex: 1 2 50%;
+}
+.articledesc h2 a{
+    text-decoration: none;
+    color: #000;
+    font-size: 1.8rem;
+}
+.articledesc p {
+    margin-top: 0.5rem;
+    color: #555;
+}
+
+
+.articles{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 10px;
+    background-color: #fff;
+    border-bottom: 5px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px #ddd;
+    max-width: 1100px;
+    padding: 10px;
+}
+
+.article {
+    background-color: #ffffff;
+     overflow: hidden;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+    border-radius: 8px;
+    transition: transform 0.2s ease;
+}
+.article img{
+    width: 100%;
+    height: auto;
+}
+
+.text {
+    padding: 10px;
+}
+.text h3 a {
+    text-decoration: none;
+    color: #000;
+    font-size: 1.1rem;
+}
+.text p{
+    color:#555;
+    font-size: .95rem;
+}
+
+.stocks{
+    flex: 2 2 15%;
+    background-color: #fff;
+    padding: 1rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+    max-height: 290px;
+    margin-top: -327px;
+}
+
+.stocks h2 {
+  margin-top: 0;
+  font-size: 1.2rem;
+}
+.stock-list {
+    list-style: none;
+}
+.stock-list li{
+    margin-bottom: 1rem;
+    font-size: medium;
+}

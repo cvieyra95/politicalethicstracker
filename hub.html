@@ -2,16 +2,80 @@
 <html>
   <head>
     <title>PoliWatch Hub</title>
-    <link rel="stylesheet" href="profile.css"> <!-- reuse existing styles if you'd like -->
+    <link rel="stylesheet" href="hub.css"> <!-- reuse existing styles if you'd like -->
   </head>
   <body>
     <div class="header">
-      <img src="Logo.png" alt="PoliWatch Logo">
-      <h1>Welcome to the PoliWatch Hub</h1>
+      <img src="Logo.png" alt="PoliWatch Logo" class="logo">
+      <h1>PoliWatch Hub</h1>
     </div>
 
-    <p>This is a mock page for deeper insights, full reports, and expanded politician data.</p>
-    
-    
+    <nav>
+      <a>News</a>
+      <a>Politicians</a>
+      <a>Activists</a>
+      <a>Login</a>
+    </nav>
+    <div class="main">
+      <!--Main Article-->
+      <section class="mainarticle">
+          <img src="./Images/Article1.jpeg">
+          <div class="articledesc">
+          <h2><a href="https://www.politico.com/news/2025/01/12/schiff-california-wildfires-response-00197705">
+            Adam Schiff wants independent commission to review wildfire response
+          </a></h2>
+          <p>Adam Schiff wants independent commission to review wildfire response</p>
+          <span class="source">Source: Politico </span>
+          </div>
+      </section>
+      
+      <!--Articles-->
+      <section class="articles">
+        <article class="article">
+        <img src="./Images/Article4.jpeg">
+        <div class="text">
+          <h3><a href="https://www.cityoffullerton.com/Home/Components/News/News/483/900">
+           Have questions about your energy bill or how the Orange County Power Authority (OCPA) works? 
+          </a></h3>
+          <p>Article description</p>
+        </div>
+        </article>
+
+        <article class="article">
+        <img src="./Images/Article2.jpeg">
+        <div class="text">
+          <h3><a href="https://www.politico.com/news/2024/11/27/derek-tran-wins-california-45-election-00187118">
+            The battle for the Orange County district turned harshly personal in the closing weeks of the campaign.
+          </a></h3>
+          <p>Article description</p>
+        </div>
+        </article>
+        <article class="article">
+        <img src="./Images/Article3.jpeg">
+        <div class="text">
+          <h3><a href="https://www.politico.com/news/2025/04/25/how-adam-schiff-is-bringing-house-vibes-to-the-senate-00308865">
+            The first-year Democratic senator is ignoring one colleague's advice to "dump the House"
+          </a></h3>
+          <p>Article description</p>
+        </div>
+        </article>
+
+      </section>
+
+
+      <aside class="stocks">
+        <h2> Recent Reported Trades</h2>
+        <ul class="stock-list">
+          <li>
+            <strong>Nancy Pelosi</strong>
+            GOOGL
+            TYPE: BUY
+            AMOUNT: $200,00
+            </li>
+        </ul>
+      </aside>
+
+
+    </div>     
   </body>
 </html>
