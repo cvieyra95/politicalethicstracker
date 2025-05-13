@@ -1,18 +1,20 @@
 .popup-tab {
   position: absolute;
   display: none;
-  background-color: white;
+  background-color: #fff;
   padding: 10px;
   border: 1px solid #ccc;
   border-radius: 6px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
   z-index: 9999;
   font-size: 14px;
-  max-width: 300px;
+  padding: 15px;
+  max-width: 350px;
 }
 
 .tab-header {
   display: flex;
+  justify-content: space-around;
   border-bottom: 1px solid #ccc;
   margin-bottom: 8px;
 }
@@ -26,14 +28,30 @@
 }
 
 .tab-header button.active {
-  border-bottom: 2px solid #007BFF;
-  color: #007BFF;
+  border-bottom: 2px solid #007bff;
+  color: #007bff;
 }
 
 .tab-content {
   display: none;
+  font-size: 16px;
+  color: #333;
+  line-height: 1.5;
 }
 
 .tab-content.active {
   display: block;
+}
+.tab-content ul{
+  padding-left: 20px;
+  margin: 0;
+}
+.tab-content ul li{
+  margin-bottom: 5px;
+}
+
+.hover-target{
+  background-color: yellow;
+  cursor: pointer;
+  font-weight: bold;
 }

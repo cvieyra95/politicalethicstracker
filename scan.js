@@ -2,21 +2,48 @@
 const politicians = {
     "Derek Tran": {
       url: "https://tran.house.gov/",
-      bio: "U.S. Representative for California's 45th district. Focuses on veterans' affairs and education.",
-      votes: "Voted in favor of the Veterans' Benefits Enhancement Act.",
-      trades: "No reported stock trades."
+      bio: "Congressman Derek Tran represents California’s 45th District and serves on the House Armed Services and Small Business Committees. A U.S. Army Reserve veteran," +
+       "he was born in Los Angeles to Vietnamese refugees and later earned degrees in Economics and Law. Before Congress, he worked as an attorney, served in civic roles, and co-owns a pharmacy with his wife. He lives in Orange County with his wife Michelle and their three children.",
+      votes: [
+        "5-8-2025 Voted No on bill H.R.276(Gulf of America Act)",
+        "5-7-2025 Voted Yes on bill H.R.881(DHS Restrictions on Confucius Institutes and Chinese Entities of Concern Act)",
+        "4-29-2025 Voted Yes on bill H.R.859(Informing Consumers about Smart Devices Act)"
+       ],
+      trades: [
+        "BUY      AMZN       $200,000",
+        "BUY      TSLA       $50,000",
+        "BUY      NVDA       $500,000",
+      ]
     },
     "Adam Schiff": {
       url: "https://schiff.house.gov",
-      bio: "Senator from California, known for national security and intelligence leadership.",
-      votes: "Voted in favor of the Intelligence Authorization Act.",
-      trades: "Reported trades in technology sector stocks."
+      bio: "Senator Adam Schiff was born in Massachusetts and raised in California. He earned degrees from Stanford (B.A.) and Harvard Law (J.D.) before serving as a federal prosecutor." 
+      + "He joined the California State Senate in 1996 and was elected to Congress in 2000, serving until 2024."
+      +"He was elected to the U.S. Senate in 2024 and sworn in on December 9.",
+      votes:  [
+      "5-8-2025 Voted No on resolution H.J.res.60(Providing for congressional disapproval under chapter 8 of title 5)",
+      "5-8-2025 Voted No on resolution H.J.res.60(Providing for congressional disapproval under chapter 8 of title 5)"
+      ],
+      trades: [
+        "BUY      AMZN       $200,000",
+        "BUY      TSLA       $50,000",
+        "BUY      NVDA       $500,000",
+      ]
     },
     "Alex Padilla": {
       url: "https://www.padilla.senate.gov/",
-      bio: "California’s junior senator, focuses on voting rights and immigration reform.",
-      votes: "Voted in favor of the Voting Rights Advancement Act.",
-      trades: "No reported stock trades."
+      bio: "Senator Alex Padilla began his political career on the Los Angeles City Council, " + 
+      "becoming the youngest Council President and serving as acting Mayor during 9/11. Elected" + 
+      " to the state senate in 2006, he passed over 70 bills, including key climate legislation. Padilla later became California's first Latino Secretary of State. In 2020, he was appointed to the U.S Senate to fill Kamala Harris's seat.",
+      votes:  [
+      "5-8-2025 Voted No on resolution H.J.res.60(Providing for congressional disapproval under chapter 8 of title 5)",
+      "5-8-2025 Voted No on resolution H.J.res.60(Providing for congressional disapproval under chapter 8 of title 5)."
+      ],
+      trades: [
+        "BUY      AMZN       $200,000",
+        "BUY      TSLA       $50,000",
+        "BUY      NVDA       $500,000",
+      ]
     }
   };
   
@@ -91,7 +118,27 @@ const politicians = {
               const content = document.createElement('div');
               content.className = 'tab-content';
               if (index === 0) content.classList.add('active');
-              content.textContent = data[tabName.toLowerCase()] || 'No information available.';
+            const tabKey = tabName.toLowerCase();
+            const tabData = data[tabKey];
+
+            if (Array.isArray(tabData)) {
+              if (tabData.length === 0) {
+                content.textContent = 'No information available.';
+              } else {
+                const list = document.createElement('ul');
+                tabData.forEach(item => {
+                  const li = document.createElement('li');
+                  li.textContent = item;
+                  list.appendChild(li);
+                });
+                content.appendChild(list);
+              }
+            } else {
+              content.textContent = tabData || 'No information available.';
+            }
+              
+
+
               popup.appendChild(content);
               tabContents[tabName] = content;
             });
