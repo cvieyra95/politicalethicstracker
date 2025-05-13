@@ -6,22 +6,40 @@ body{
 .header{
     display: flex;
     align-items: center;
+    justify-content: space-between;
     padding: 10px 20px;
 }
+.donation {
+    background-color: #E39C77;
+    color:white;
+    padding: 10px 15px;
+    cursor: pointer;
+    font-weight: bold;
+    border: none;
+    border-radius: 8px;
+    font-size: 18px;
+
+}
+
 .logo{
-    width: 125px
+    width: 150px
 }
 nav{
     display: flex;
-    justify-content: left;
+    justify-content: space-between;
     background-color: #848BA4;
-    padding: 15px 10;
+    padding: 15px 10px;
+}
+nav .nav-left, nav .nav-right{
+    display: flex;
+    gap: 15px;
 }
 
 nav a {
-    color: #000;
+    color: #fff;
     margin: 0 15px;
     font-weight: bold;
+    font-size: 15px;
 }
 
 nav a:hover {
@@ -102,25 +120,104 @@ nav a:hover {
     color:#555;
     font-size: .95rem;
 }
-
-.stocks{
-    flex: 2 2 15%;
+.sidebar{
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+.trade-box{
     background-color: #fff;
-    padding: 1rem;
-    border-radius: 8px;
-    box-shadow: 0 2px 6px rgba(0,0,0,0.08);
-    max-height: 290px;
-    margin-top: -327px;
+    padding: 10px;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px #ddd;
+    color: black;
+    min-width: 300px;
+    margin-top: -325px;
+    max-height: 385px;
+    overflow-y: auto;
+    scrollbar-width: thin;
+    scrollbar-color: black;
+}
+.trade-header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 15px;
 }
 
-.stocks h2 {
-  margin-top: 0;
-  font-size: 1.2rem;
+.view-all {
+    color: black;
+    font-size: 14px;
 }
-.stock-list {
-    list-style: none;
+
+.trade-row{
+    display: flex;
+    justify-content: space-between;
+    background-color: #E4E2E5;
+    padding: 12px;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    align-items: center;
 }
-.stock-list li{
-    margin-bottom: 1rem;
-    font-size: medium;
+.trade-row span{
+    flex: 1;
+    padding: 0 8px;
 }
+.action{
+    color: green;
+    font-weight: bold;
+}
+
+.company small, .name small {
+    color: #E39C77;
+    font-size: 12px;
+}
+
+
+.vote-box{
+    background-color: #fff;
+    padding: 10px;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px #ddd;
+    color: black;
+    margin-top: 0px;
+    max-height: 385px;
+    overflow-y: auto;
+    scrollbar-width: thin;
+    scrollbar-color: black;
+}
+.vote-header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 15px;
+}
+
+.view-all {
+    color: black;
+    font-size: 14px;
+}
+
+.vote-row{
+    display: flex;
+    justify-content: space-between;
+    background-color: #E4E2E5;
+    padding: 12px;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    align-items: center;
+}
+.vote-row span{
+    flex: 1;
+    padding: 0 8px;
+}
+.bill-status{
+    color: green;
+    font-weight: bold;
+}
+
+.company small, .name small {
+    color: #E39C77;
+    font-size: 12px;
+}
+
