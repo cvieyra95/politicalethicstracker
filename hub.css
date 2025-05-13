@@ -65,6 +65,10 @@ nav a:hover {
     box-shadow: 0 2px 8px #ddd;
     max-width: 1080px;
 }
+.mainarticle p {
+    font-size: 1rem; /* or try 1.05rem or 16px */
+    line-height: 1.6;
+  }
 .mainarticle img{
     max-width: 40%;
     flex: 1 1 50%;
