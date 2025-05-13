@@ -142,7 +142,7 @@ nav a:hover {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    margin-bottom: 15px;
+    font-size: 1rem;
 }
 
 .view-all {
@@ -190,7 +190,7 @@ nav a:hover {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    margin-bottom: 15px;
+    font-size: 1rem;
 }
 
 .view-all {
