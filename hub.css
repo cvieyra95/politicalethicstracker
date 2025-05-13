@@ -91,7 +91,7 @@ nav a:hover {
     background-color: #fff;
     border-bottom: 5px solid #ddd;
     border-radius: 10px;
-    box-shadow: 0 2px 8px #ddd;
+    
     max-width: 1100px;
     padding: 10px;
 }
@@ -216,8 +216,29 @@ nav a:hover {
     font-weight: bold;
 }
 
-.company small, .name small {
-    color: #E39C77;
-    font-size: 12px;
-}
 
+.footer {
+    display: flex;
+    justify-content: center; /* horizontal center */
+    align-items: center;     /* vertical center */
+    background-color: #848BA4;
+    height: 60px;
+    color: white;
+    font-size: 14px;
+}
+  
+.footer-links {
+    display: flex;
+    gap: 30px;
+    flex: 0 1 auto; /* shorthand: grow=0, shrink=1, basis=auto */
+}
+  
+.footer-links a {  /* font color for About , Contact, Donations */
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+  
+  .footer-links a:hover {
+    text-decoration: underline;
+}
