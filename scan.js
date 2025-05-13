@@ -2,15 +2,21 @@
 const politicians = {
     "Derek Tran": {
       url: "https://tran.house.gov/",
-      bio: "U.S. Representative for California's 45th district. Focuses on veterans' affairs and education."
+      bio: "U.S. Representative for California's 45th district. Focuses on veterans' affairs and education.",
+      votes: "Voted in favor of the Veterans' Benefits Enhancement Act.",
+      trades: "No reported stock trades."
     },
     "Adam Schiff": {
       url: "https://schiff.house.gov",
-      bio: "Senator from California, known for national security and intelligence leadership."
+      bio: "Senator from California, known for national security and intelligence leadership.",
+      votes: "Voted in favor of the Intelligence Authorization Act.",
+      trades: "Reported trades in technology sector stocks."
     },
     "Alex Padilla": {
       url: "https://www.padilla.senate.gov/",
-      bio: "California’s junior senator, focuses on voting rights and immigration reform."
+      bio: "California’s junior senator, focuses on voting rights and immigration reform.",
+      votes: "Voted in favor of the Voting Rights Advancement Act.",
+      trades: "No reported stock trades."
     }
   };
   
@@ -24,13 +30,14 @@ const politicians = {
   let currentProfileURL = null;
   
   // === Handle click on popup ===
-  popup.addEventListener('click', () => {
-    if (currentProfileURL) {
+  popup.addEventListener('click', (e) => {
+    // Only open the link if the popup itself is clicked directly (not the buttons inside it)
+    if (e.target === popup && currentProfileURL) {
       window.open(currentProfileURL, '_blank');
     }
   });
   
-  // === Main function: scan and replace names ===
+// === Main function: scan and replace names ===
   function scanAndAttachHover() {
     const walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT);
     let node;
@@ -56,29 +63,54 @@ const politicians = {
             popup.style.left = `${rect.left + window.scrollX}px`;
             popup.style.display = 'block';
             currentProfileURL = data.url;
-  
-            // Fill popup content
+          
+            // Clear previous content
             popup.innerHTML = '';
-            const nameEl = document.createElement('div');
-            nameEl.style.fontWeight = 'bold';
-            nameEl.style.marginBottom = '4px';
-            nameEl.textContent = name;
-  
-            const bioEl = document.createElement('div');
-            bioEl.style.fontSize = '13px';
-            bioEl.style.maxWidth = '200px';
-            bioEl.style.lineHeight = '1.4';
-            bioEl.textContent = data.bio || "Biography not available.";
-  
-            popup.appendChild(nameEl);
-            popup.appendChild(bioEl);
+          
+            // Create tab headers
+            const tabHeader = document.createElement('div');
+            tabHeader.className = 'tab-header';
+          
+            const tabs = ['Bio', 'Votes', 'Trades'];
+            const tabButtons = {};
+          
+            tabs.forEach((tabName, index) => {
+              const button = document.createElement('button');
+              button.textContent = tabName;
+              if (index === 0) button.classList.add('active');
+              tabHeader.appendChild(button);
+              tabButtons[tabName] = button;
+            });
+          
+            popup.appendChild(tabHeader);
+          
+            // Create tab contents
+            const tabContents = {};
+          
+            tabs.forEach((tabName, index) => {
+              const content = document.createElement('div');
+              content.className = 'tab-content';
+              if (index === 0) content.classList.add('active');
+              content.textContent = data[tabName.toLowerCase()] || 'No information available.';
+              popup.appendChild(content);
+              tabContents[tabName] = content;
+            });
+          
+            // Add event listeners to tabs
+            tabs.forEach((tabName) => {
+              tabButtons[tabName].addEventListener('click', () => {
+                // Remove active class from all tabs and contents
+                tabs.forEach((name) => {
+                  tabButtons[name].classList.remove('active');
+                  tabContents[name].classList.remove('active');
+                });
+                // Add active class to selected tab and content
+                tabButtons[tabName].classList.add('active');
+                tabContents[tabName].classList.add('active');
+              });
+            });
           });
-  
-          span.addEventListener('mouseleave', () => {
-            popup.style.display = 'none';
-            currentProfileURL = null;
-          });
-  
+          
           // Replace the text node with spans
           const parent = node.parentNode;
           parent.insertBefore(before, node);
@@ -92,4 +124,12 @@ const politicians = {
   
   // === Run the hover setup ===
   scanAndAttachHover();
+  
+  // Close popup when clicking anywhere outside of it
+document.addEventListener('click', (e) => {
+    if (!popup.contains(e.target)) {
+      popup.style.display = 'none';
+      currentProfileURL = null;
+    }
+  });
   
