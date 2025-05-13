@@ -6,3 +6,25 @@
     border-radius: 4px;
   }
   
+  .hover-target {
+    background-color: yellow;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 4px;
+    padding: 2px 4px;
+  }
+  
+  .popup-tab {
+    position: absolute;
+    display: none;
+    background-color: white;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    z-index: 9999;
+    font-size: 14px;
+    width: auto;
+    max-width: 220px;
+  }
+  
